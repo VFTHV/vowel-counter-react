@@ -1,10 +1,11 @@
 import React from "react";
+import Announcement from "./components/announcement";
 
 class App extends React.Component {
   constructor() {
     super();
 
-    this.state = { letters: "" };
+    this.state = { letters: "", vowels: null };
   }
 
   onVowelCount = (event) => {
@@ -20,10 +21,11 @@ class App extends React.Component {
       }
     });
 
-    const hasVowels = `Number of vowels in your phrase: ${counter}`;
-    const noVowels = "There were no vowels in your phrase";
-    counter !== 0 ? alert(hasVowels) : alert(noVowels);
-    this.setState({ letters: "" });
+    // const hasVowels = `Number of vowels in your phrase: ${counter}`;
+    // const noVowels = "There were no vowels in your phrase";
+    // counter !== 0 ? alert(hasVowels) : alert(noVowels);
+
+    this.setState({ letters: "", vowels: counter });
   };
 
   render() {
@@ -54,6 +56,9 @@ class App extends React.Component {
             </div>
           </div>
         </form>
+        {this.state.vowels === null ? null : (
+          <Announcement vowels={this.state.vowels} />
+        )}
       </div>
     );
   }
