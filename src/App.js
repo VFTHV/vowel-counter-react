@@ -5,7 +5,7 @@ class App extends React.Component {
   constructor() {
     super();
 
-    this.state = { letters: null, vowels: null };
+    this.state = { letters: null, vowels: '' };
   }
 
   onVowelCount = (event) => {
@@ -21,11 +21,7 @@ class App extends React.Component {
       }
     });
 
-    // const hasVowels = `Number of vowels in your phrase: ${counter}`;
-    // const noVowels = "There were no vowels in your phrase";
-    // counter !== 0 ? alert(hasVowels) : alert(noVowels);
-
-    this.setState({ letters: null, vowels: counter });
+    this.setState({ letters: '', vowels: counter });
   };
 
   render() {
