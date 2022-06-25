@@ -13,7 +13,7 @@ class App extends React.Component {
       return;
     }
     event.preventDefault();
-    const allVowels = "aeiouy".split("");
+    const allVowels = "aeiouyAEIOUY".split("");
     let counter = 0;
     this.state.letters.split("").forEach((letter) => {
       if (allVowels.includes(letter)) {
